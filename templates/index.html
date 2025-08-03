@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday BB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      margin: 0;
+    }
+    .hidden { display: none; }
+    .container { max-width: 800px; margin: auto; padding: 20px; }
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    img.memory {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey BABY, I made something special for you...</h1>
+    <button onclick="revealSurprise()">Click to Begin 🎁</button>
+
+    <div id="surprise" class="hidden">
+      <h2>Happy Birthday BABY! 🎂</h2>
+
+      <section>
+        <h3>From your girl ❤️</h3>
+        <p>(Hello baby , wishing you a very HAPPY BIRTHDAY MY LOVE , MY BABY , MY EVERYTHING . I don't want to say everything in the message , as your kammo is going to surprise you with little kosish taki tumhara ye birthday sbse special and sbse memorable ho baby)</p>
+      </section>
+
+      <section>
+        <h3>Our Sweet Memories 📸</h3>
+         <p>(Our sweet memories ..... baby hum bohot jld milenge aur bohot sare memories bnayenge .... pr baby 25th january 2024 se tumhare sath hr ek baat hr ek chizein sbkuch sweet se bohot sweet , beautifull memorable hi rha hai .... ab aur jyada yaha nhi likhungi agge dekho aur kuch chota kosissh tumhari kammo k taraf se baby</p>
+      </section>
+
+      <section>
+        <h3>song I Made for You 🎶</h3>
+        <audio id="birthday-song" controls autoplay>
+          <source src="/media/your_song.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <section>
+        <h3>Days Since We Met ⏳</h3>
+        <p id="days-count"></p>
+      </section>
+
+      <section>
+        <h3>I'm Sorry 😔</h3>
+        <p>I took help to make this, but it’s made with all my heart just for you. Hope it brings a smile ❤️</p>
+      </section>
+
+      <section>
+        <h3>A Video for You 🎥</h3>
+        <video width="100%" controls>
+          <source src="/media/your_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function revealSurprise() {
+      document.getElementById('surprise').classList.remove('hidden');
+      document.getElementById('birthday-song').play().catch(() => {});
+      const startDate = new Date("2024-01-25");
+      const today = new Date();
+      const diffTime = today - startDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("days-count").innerText = diffDays + " days since we met.";
+    }
+  </script>
+</body>
+</html>
